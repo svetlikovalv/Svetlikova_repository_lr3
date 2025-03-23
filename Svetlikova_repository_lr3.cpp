@@ -25,9 +25,12 @@ void input_a(){
 }
 
 void input_b(){
-    
+    cout<<"введите целую часть комсплексного числа - b"<<endl;
+    b=enter_number();
+    cout<<"комплексная часть числа b= "<<b<<endl;
 }
 void modul() {
+    
 }
 void argument() {
 }
