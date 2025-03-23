@@ -34,6 +34,23 @@ void modul() {
     cout<<"модуль комплексного числа: "<<pow((a*a+b*b),0.5)<<endl;
 }
 void argument() {
+    cout<<"комплексная часть числа а= "<<a<<"  комплексная часть числа b= "<<b<<endl;
+    if (a>0){
+        cout<<"аргумент функции"<<atan2(b,a)<<endl;
+    }
+    if (a<0 && b>0){
+        cout<<"аргумент функции"<<atan2(b,a)+acos(-1.0) <<endl;
+    }if(a<0 && b<0){ 
+        cout<<"аргумент функции"<<atan2(b,a)-acos(-1.0) <<endl;
+    }if(a==0&&b>0){
+        cout<<"аргумент функции"<<acos(-1.0)/2<<endl;
+    }
+    if(a==0&&b<0){
+        cout<<"аргумент функции"<<- acos(-1.0)/2 <<endl;
+    }if (a==0 && b==0){
+        cout<<"аргумента не существует"<<endl;
+    }
+
 }
 void menu(){
     setlocale(LC_ALL,"rus");
