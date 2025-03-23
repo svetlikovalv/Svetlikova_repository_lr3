@@ -1,46 +1,36 @@
 #include <iostream>
 #include <string>
-#include <functional>
+#include <limits>
+#include <cmath>
 using namespace std;
 
-//void enter_number(){}
+double a;
+double b;
 
-
-//проверка ввода
-bool user_input(string input){
-    if (input.empty())
- return false;
- try{
-    int num=stoi(input);
-    if (num<0) return false;
-
- }
-catch(...)
-{return false;}
-return true;
+double enter_number(){
+    double value;
+    while (!(cin >> value)) {
+        cout << "Неверный ввод. Введите вещественное число: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    return value;
 }
-//ввод целых чисел
-function<void()>  enter_number(int& var_link,string label){
-    return [&var_link, label](){
-        string raw_input;
-        cout<< label <<" = ";
-        getline(cin,raw_input);
-        while(!user_input(raw_input)){
-            cout<<label<<"=";
-            getline(cin,raw_input);
-        }
-        var_link=stoi(raw_input);
-    };
-}
+
+
 void input_a(){
-    cout<<"введите вещественную часть комплексного числа"<<endl;
-    int a;
-    enter_number(a,"введите целую часть комспексного числа - а");
+    cout<<"введите целую часть комсплексного числа - а"<<endl;
+    a=enter_number();
+    cout<<"комплексная часть числа а= "<<a<<endl;
 }
 
-void input_b(){}
-void modul() {}
-void argument() {}
+void input_b(){
+    
+}
+void modul() {
+}
+void argument() {
+}
 void menu(){
     setlocale(LC_ALL,"rus");
     
@@ -48,10 +38,10 @@ void menu(){
     cout<<"задача 2: вводит мнимую часть комплексного числа - B"<<endl; 
     cout<<"задача 3: находит модуль комплексного числа"<<endl; 
     cout<<"задача 4: находит аргумент комплексного числа"<<endl;
-    cout << "введите номер задачи: "<<endl;
-    int user_input;
-    cin>>user_input;
-    switch(user_input)
+    cout << "введите номер задачи: ";
+    int user_num;
+    cin>>user_num;
+    switch(user_num)
     {
         case 1: 
             input_a();
